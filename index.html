@@ -7,22 +7,40 @@
   <title>Work Mode</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
-  <style>
+  <!-- <style>
   #draggable { width: 150px; height: 150px; padding: 0.5em; }
+  </style> -->
+  <style>
+    .parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Absolute-Center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
   </style>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
+  <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+  <!-- <script>
   $( function() {
     $( "#draggable" ).draggable();
   } );
-  </script>
+  </script> -->
 </head>
 <body>
- 
-<div id="draggable" class="ui-widget-content">
+  <div class="parent">
+    <a class="child" href="https://www.dropbox.com/s/q3spcbpxgmcfnro/RoadMap_of_RidePal_2018.doc">Roadmap_of_RidePal</a>
+  </div>
+<!-- <div id="draggable" class="ui-widget-content">
   <p>Drag me around</p>
-</div>
+</div> -->
  
  
 </body>
