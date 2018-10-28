@@ -1,19 +1,15 @@
+header{
+    font-size: 2.4em;
+}
 .disable-select{
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
 }
-.input-box{
-    /* border: 2px solid #4CAF50; */
-
-}
 .internal-button{
     border: 2px solid #009933;
     border-radius: 5px;
-    /* background-color: white;
-    color: #009933; */
-
     color: white;
     background-color: #009933;
 
@@ -22,9 +18,6 @@
     cursor: pointer;
 }
 .internal-button:hover{
-    /* background: #009933;
-    color: white; */
-
     background-color: white;
     color: #009933;
 }
@@ -39,8 +32,8 @@
 .text-center{
     text-align: center;
 }
-.padding-top-10-p{
-    padding-top: 10%;
+.padding-top-5-p{
+    padding-top: 5%;
 }
 .padding-15{
     padding: 15px;
