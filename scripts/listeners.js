@@ -1,11 +1,8 @@
-var dataListener = document.getElementById('inpDataField');
-var cateListener = document.getElementById('inpCateField');
-var hintListener = document.getElementById('inpHintField');
+var dataListener = document.getElementById('inpMagicField');
 
-// TO DO: LISTENERS TO NOT ALLOW COMMA ON DATALISTENER AND HINTLISTENER
-// TO DO: LISTENER TO ALLOW ONLY ONE COMMA FOR CATELISTENER
+// TO DO: LISTENERS TO ALLOW ONLY A SINGLE WORD
 
-var formListener = document.getElementById('mainForm');
+var formListener = document.getElementById('magicForm');
 formListener.addEventListener('submit', function (evt) {
     evt.preventDefault();
 });

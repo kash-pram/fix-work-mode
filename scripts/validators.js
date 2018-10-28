@@ -6,8 +6,7 @@ var validate_inputs = validate_inputs;
 function validate_inputs () {
     var checkFlag = false;
 
-    checkFlag = checkEmpty(dataListener.value) && checkEmpty(cateListener.value) &&
-              checkLength(cateListener.value) && checkLength(hintListener.value);
+    checkFlag = checkEmpty(dataListener.value) && checkLength(dataListener.value);
 
     return checkFlag;
 } // FN VAL-INPUTS
