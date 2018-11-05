@@ -43,7 +43,7 @@ header{
 }
 
 
-#toast {
+#divToast {
     visibility: hidden;
     max-width: 50px;
     height: 50px;
@@ -54,13 +54,13 @@ header{
     text-align: center;
     border-radius: 2px;
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     left: 0;right:0;
     bottom: 30px;
     font-size: 17px;
     white-space: nowrap;
 }
-/* #toast #img{
+/* #divToast #img{
 	width: 50px;
 	height: 50px;
     float: left;
@@ -70,14 +70,14 @@ header{
     background-color: #111;
     color: #fff;
 } */
-#toast #divDesc{   
+#divToast #divDesc{   
     color: #fff;
     padding: 16px;
     overflow: hidden;
     white-space: nowrap;
 }
 
-#toast.show {
+#divToast.show {
     visibility: visible;
     -webkit-animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 2s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, expand 0.5s 0.5s,stay 3s 1s, shrink 0.5s 4s, fadeout 0.5s 4.5s;
@@ -129,4 +129,41 @@ header{
 @keyframes fadeout {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 60px; opacity: 0;}
+}
+
+
+
+
+#cover-spin {
+    position:fixed;
+    width:100%;
+    left:0;right:0;top:0;bottom:0;
+    background-color: rgba(255,255,255,0.7);
+    z-index:9999;
+    display:none;
+}
+
+@-webkit-keyframes spin {
+	from {-webkit-transform:rotate(0deg);}
+	to {-webkit-transform:rotate(360deg);}
+}
+
+@keyframes spin {
+	from {transform:rotate(0deg);}
+	to {transform:rotate(360deg);}
+}
+
+#cover-spin::after {
+    content:'';
+    display:block;
+    position:absolute;
+    left:48%;top:40%;
+    width:40px;height:40px;
+    border-style:solid;
+    border-color:black;
+    border-top-color:transparent;
+    border-width: 4px;
+    border-radius:50%;
+    -webkit-animation: spin .8s linear infinite;
+    animation: spin .8s linear infinite;
 }

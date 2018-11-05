@@ -13,11 +13,17 @@ function fn_goHome () {
 
 function fn_showFetchedData () {
     // db_data && db_data !== '' &&
-    if ( db_data.linkObjects && db_data.linkObjects instanceof Object && Object.keys(db_data.linkObjects) > 0 ) {
+    var LINKS_OBJECT = db_data.linksList;
+
+    if ( LINKS_OBJECT && LINKS_OBJECT instanceof Object && Object.keys(LINKS_OBJECT).length > 0 ) {
         var TMPL = "<a class='external_link' target='_blank' href='";
         var fetchedData = '';
-        for ( var i=0; i < Object.keys(db_data.linkObjects); i++ ) {
-            fetchedData += TMPL + db_data.links[i] + "'>" + getLinkName(db_data.links[i]) + '</a></br>';
+
+        for ( var eachProperty in LINKS_OBJECT ) {
+            if ( LINKS_OBJECT.hasOwnProperty(eachProperty) ) {
+                // fetchedData += TMPL + eachProperty + "'>" + getLinkName(db_data.links[i]) + '</a></br>';
+                fetchedData += TMPL + LINKS_OBJECT[eachProperty] + "'>" + eachProperty + '</a></br>';
+            }
         } // FOR
 
         bindElements(fetchedData);
@@ -26,8 +32,7 @@ function fn_showFetchedData () {
 
 function bindElements (fetchedData) {
     gb_contentElem.innerHTML = gb_resultContent;
-    // document.getElementById('divResults').appendChild(fetchedData);
-    document.getElementById('divResults').innerHTML(fetchedData);
+    document.getElementById('divResults').innerHTML = fetchedData;
 } // FN BIND-ELEMENTS
 
 /*
