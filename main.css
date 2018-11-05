@@ -70,7 +70,7 @@ header{
     background-color: #111;
     color: #fff;
 } */
-#toast #desc{   
+#toast #divDesc{   
     color: #fff;
     padding: 16px;
     overflow: hidden;

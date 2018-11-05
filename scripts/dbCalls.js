@@ -12,7 +12,7 @@ db_fireObj.settings({
 function db_get () {  
     if ( validate_inputs() ) {
 // TO DO: TRIM THE FIRST AND LAST TRAILING WHITE SPACES
-        showToast();
+        showToast("Fetching data..");
         db_fireObj.collection(dataListener.value).get().then(querySnapshot => {
 // TO DO: CLEAR THE FIELDS AFTER POST
 // TO DO: MAKE BROWSER NOT REMEMBER THE LAST ENTERED TEXTS
@@ -25,10 +25,10 @@ function db_get () {
             hideToast();
         }).catch(function(error) {
             console.error("Error reading document: ", error);
+            showToast("Error reading document!", 3000);
         });
     } else {
-        // TO DO: SHOW TOAST ERROR MSG
-        console.log("INVALID INPUTS");
+        showToast("Invalid inputs!", 3000);
     }
     return false;
 } // FN DB_GET

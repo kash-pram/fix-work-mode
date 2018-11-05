@@ -13,15 +13,22 @@ function fn_goHome () {
 
 function fn_showFetchedData () {
     // db_data && db_data !== '' &&
-    if ( db_data.links && db_data.links instanceof Array && db_data.links.length > 0 ) {
-        var tmpl = "<a class='external_link' target='_blank' href='";
+    if ( db_data.linkObjects && db_data.linkObjects instanceof Object && Object.keys(db_data.linkObjects) > 0 ) {
+        var TMPL = "<a class='external_link' target='_blank' href='";
         var fetchedData = '';
-        for ( var i=0; i < db_data.links.length; i++ ) {
-            fetchedData += tmpl + db_data.links[i] + "'>" + getLinkName(db_data.links[i]) + '</a></br>';
+        for ( var i=0; i < Object.keys(db_data.linkObjects); i++ ) {
+            fetchedData += TMPL + db_data.links[i] + "'>" + getLinkName(db_data.links[i]) + '</a></br>';
         } // FOR
-        gb_contentElem.innerHTML = fetchedData;
+
+        bindElements(fetchedData);
     } // IF ARRAY
 } // FN-SHOW-FETCHED-DATA
+
+function bindElements (fetchedData) {
+    gb_contentElem.innerHTML = gb_resultContent;
+    // document.getElementById('divResults').appendChild(fetchedData);
+    document.getElementById('divResults').innerHTML(fetchedData);
+} // FN BIND-ELEMENTS
 
 /*
 * @returns {string}
