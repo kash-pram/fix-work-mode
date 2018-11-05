@@ -13,6 +13,7 @@ function db_get () {
     if ( validate_inputs() ) {
 // TO DO: TRIM THE FIRST AND LAST TRAILING WHITE SPACES
         document.getElementById('cover-spin').className = 'display';
+// TO DO: ADD ANIMATION CSS FOR SHOW AND HIDE
         db_fireObj.collection(dataListener.value).get().then(querySnapshot => {
 // TO DO: CLEAR THE FIELDS AFTER POST
 // TO DO: MAKE BROWSER NOT REMEMBER THE LAST ENTERED TEXTS

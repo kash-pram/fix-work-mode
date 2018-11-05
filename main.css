@@ -21,12 +21,15 @@ header{
     background-color: white;
     color: #009933;
 }
-.internal-link {
+.external_link {
     color: #19B5FE;
 }
-.internal-link:hover{
-    padding-bottom: 3px;
-    border-bottom: 1px solid #19B5FE;
+.external_link:hover{
+    /* padding-bottom: 3px;
+    border-bottom: 1px solid #19B5FE; */
+    cursor: pointer;
+}
+.pointer-cursor{
     cursor: pointer;
 }
 .text-center{

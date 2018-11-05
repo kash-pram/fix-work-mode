@@ -13,13 +13,9 @@ activate();
 
 function fn_goHome () {
     gb_contentElem.innerHTML = gb_homeContent;
-    // document.getElementById('inpMagicField').autofocus = true;
-    console.log('INITIAL -> ', document.getElementById('inpMagicField').autofocus);
-    
 } // FN-GO-HOME
 
 function fn_showFetchedData () {
-    // db_data && db_data !== '' &&
     var LINKS_OBJECT = db_data.linksList;
 
     if ( LINKS_OBJECT && LINKS_OBJECT instanceof Object && Object.keys(LINKS_OBJECT).length > 0 ) {
@@ -28,7 +24,6 @@ function fn_showFetchedData () {
 
         for ( var eachProperty in LINKS_OBJECT ) {
             if ( LINKS_OBJECT.hasOwnProperty(eachProperty) ) {
-                // fetchedData += TMPL + eachProperty + "'>" + getLinkName(db_data.links[i]) + '</a></br>';
                 fetchedData += TMPL + LINKS_OBJECT[eachProperty] + "'>" + eachProperty + '</a></br>';
             }
         } // FOR
