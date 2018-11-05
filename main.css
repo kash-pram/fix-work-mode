@@ -54,7 +54,7 @@ header{
     text-align: center;
     border-radius: 2px;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     left: 0;right:0;
     bottom: 30px;
     font-size: 17px;
@@ -132,14 +132,19 @@ header{
 }
 
 
-
+#cover-spin.display{
+    display: block;
+}
+#cover-spin.none{
+    display: none;
+}
 
 #cover-spin {
     position:fixed;
     width:100%;
     left:0;right:0;top:0;bottom:0;
     background-color: rgba(255,255,255,0.7);
-    z-index:9999;
+    z-index:99;
     display:none;
 }
 

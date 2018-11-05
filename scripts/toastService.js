@@ -13,6 +13,5 @@ function showToast (inpText, inpTime) {
 } // FN SHOW-TOAST
 
 function hideToast () {
-    // toastElem.className = toastElem.className.replace("show", ""); 
-    toastElem.className.replace("show", ""); 
+    toastElem.className = toastElem.className.replace("show", "");
 } // FN HIDE-TOAST

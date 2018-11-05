@@ -12,7 +12,7 @@ db_fireObj.settings({
 function db_get () {  
     if ( validate_inputs() ) {
 // TO DO: TRIM THE FIRST AND LAST TRAILING WHITE SPACES
-        showToast("Fetching data..");
+        document.getElementById('cover-spin').className = 'display';
         db_fireObj.collection(dataListener.value).get().then(querySnapshot => {
 // TO DO: CLEAR THE FIELDS AFTER POST
 // TO DO: MAKE BROWSER NOT REMEMBER THE LAST ENTERED TEXTS
@@ -22,13 +22,14 @@ function db_get () {
                 db_data = doc.data();
             }); // FOR-EACH
             fn_showFetchedData();
-            hideToast();
+            document.getElementById('cover-spin').className = 'none';
         }).catch(function(error) {
             console.error("Error reading document: ", error);
             showToast("Error reading document!", 3000);
+            document.getElementById('cover-spin').className = 'none';
         });
     } else {
-        showToast("Invalid inputs!", 3000);
+        console.log('Invalid input ', dataListener.value);
     }
     return false;
 } // FN DB_GET

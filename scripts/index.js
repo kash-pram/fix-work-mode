@@ -3,12 +3,19 @@ var fn_showFetchedData = fn_showFetchedData;
 
 function activate () {
     fn_goHome();
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     // document.getElementById('inpMagicField').autofocus = true;
+    //     console.log('AFTER -> ', document.getElementById('inpMagicField').autofocus);
+    //  }, false);
 } // FN ACTIVATE
 
 activate();
 
 function fn_goHome () {
     gb_contentElem.innerHTML = gb_homeContent;
+    // document.getElementById('inpMagicField').autofocus = true;
+    console.log('INITIAL -> ', document.getElementById('inpMagicField').autofocus);
+    
 } // FN-GO-HOME
 
 function fn_showFetchedData () {
