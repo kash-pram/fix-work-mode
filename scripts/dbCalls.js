@@ -12,25 +12,27 @@ db_fireObj.settings({
 function db_get () {  
     if ( validate_inputs() ) {
 // TO DO: TRIM THE FIRST AND LAST TRAILING WHITE SPACES
-        document.getElementById('cover-spin').className = 'display';
+        showLoading();
 // TO DO: ADD ANIMATION CSS FOR SHOW AND HIDE
-        db_fireObj.collection(dataListener.value).get().then(querySnapshot => {
-// TO DO: CLEAR THE FIELDS AFTER POST
-// TO DO: MAKE BROWSER NOT REMEMBER THE LAST ENTERED TEXTS
+        try {
+            db_fireObj.collection(dataListener.value).get().then(querySnapshot => {
+    // TO DO: CLEAR THE FIELDS AFTER POST
+    // TO DO: MAKE BROWSER NOT REMEMBER THE LAST ENTERED TEXTS
 
-// TO DO: BACK-END TO RESTRICT ONLY 100 REQUESTS PER DAY FROM A USER TOKEN
-            querySnapshot.forEach((doc) => {
-                db_data = doc.data();
-            }); // FOR-EACH
-            fn_showFetchedData();
-            document.getElementById('cover-spin').className = 'none';
-        }).catch(function(error) {
+    // TO DO: BACK-END TO RESTRICT ONLY 100 REQUESTS PER DAY FROM A USER TOKEN
+                querySnapshot.forEach((doc) => {
+                    db_data = doc.data();
+                }); // FOR-EACH
+                fn_showFetchedData();
+                hideLoading();
+            }); // DB CALL
+        } catch (error) {
             console.error("Error reading document: ", error);
             showToast("Error reading document!", 3000);
-            document.getElementById('cover-spin').className = 'none';
-        });
+            hideLoading();
+        } // TRY-CATCH
     } else {
         console.log('Invalid input ', dataListener.value);
-    }
+    } // IF-ELSE
     return false;
 } // FN DB_GET

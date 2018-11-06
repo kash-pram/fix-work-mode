@@ -5,7 +5,11 @@ var validate_inputs = validate_inputs;
 */
 function validate_inputs () {
     var checkFlag = false;
-    checkFlag = checkEmpty(dataListener.value) && checkLength(dataListener.value);
+    if ( navigator.onLine ) {
+        checkFlag = checkEmpty(dataListener.value) && checkLength(dataListener.value);
+    } else {
+        showToast("Kindly check your internet connection.", 3000);
+    }
     return checkFlag;
 } // FN VAL-INPUTS
 

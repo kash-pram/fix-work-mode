@@ -5,7 +5,7 @@ var MAX_LENGTH = 50;
 var PAGE_TITLE = "workmode.me";
 
 var gb_pageHeader = "<div class='padding-top-5-p'>\
-                      <header class='text-center pointer-cursor' onclick='fn_goHome()'>" + PAGE_TITLE + "</header>\
+                      <header class='text-center pointer-cursor' onclick='fn_reload()'>" + PAGE_TITLE + "</header>\
                      </div>";
 
 var gb_homeContent =  gb_pageHeader + "<form class='text-center padding-top-5-p' id='magicForm'>\

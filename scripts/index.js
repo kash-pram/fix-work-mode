@@ -4,8 +4,7 @@ var fn_showFetchedData = fn_showFetchedData;
 function activate () {
     fn_goHome();
     // document.addEventListener('DOMContentLoaded', function() {
-    //     // document.getElementById('inpMagicField').autofocus = true;
-    //     console.log('AFTER -> ', document.getElementById('inpMagicField').autofocus);
+        // code here
     //  }, false);
 } // FN ACTIVATE
 
@@ -14,6 +13,10 @@ activate();
 function fn_goHome () {
     gb_contentElem.innerHTML = gb_homeContent;
 } // FN-GO-HOME
+
+function fn_reload () {
+    window.location.reload(true);
+} // FN-RELOAD
 
 function fn_showFetchedData () {
     var LINKS_OBJECT = db_data.linksList;
@@ -36,6 +39,16 @@ function bindElements (fetchedData) {
     gb_contentElem.innerHTML = gb_resultContent;
     document.getElementById('divResults').innerHTML = fetchedData;
 } // FN BIND-ELEMENTS
+
+function hideLoading () {
+    document.getElementById('cover-spin').className = 'none';
+} // FN HIDE-LOADING
+
+function showLoading () {
+    document.getElementById('cover-spin').className = 'display';
+} // FN SHOW-LOADING
+
+
 
 /*
 * @returns {string}
