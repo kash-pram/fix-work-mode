@@ -1,5 +1,6 @@
 var fn_goHome = fn_goHome;
 var fn_showFetchedData = fn_showFetchedData;
+var fn_processInput = fn_processInput;
 
 function activate () {
     fn_goHome();
@@ -18,6 +19,9 @@ function fn_reload () {
     window.location.reload(true);
 } // FN-RELOAD
 
+/*
+* @returns {nothing}
+*/
 function fn_showFetchedData () {
     var LINKS_OBJECT = db_data.linksList;
 
@@ -35,12 +39,24 @@ function fn_showFetchedData () {
     } // IF ARRAY
 } // FN-SHOW-FETCHED-DATA
 
+/*
+* @returns {nothing}
+*/
 function bindElements (fetchedData) {
     gb_contentElem.innerHTML = gb_resultContent;
     document.getElementById('divResults').innerHTML = "<div class='border-curved'>" + fetchedData + "</div>";
 } // FN BIND-ELEMENTS
 
-
+/*
+* @returns {nothing}
+*/
+function fn_processInput () {
+    if ( dataListener.value !== '') {
+        magicWord = dataListener.value;
+        magicWord = magicWord.replace(/[ \t]+$/, '');
+        magicWord = magicWord.toLowerCase();
+    }
+} // FN-PROCESS-INPUT
 
 /*
 * @returns {string}

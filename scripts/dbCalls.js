@@ -1,6 +1,5 @@
 var db_fireObj = firebase.firestore();
 var db_get = db_get;
-var db_data = "";
 
 db_fireObj.settings({
     timestampsInSnapshots: true
@@ -9,7 +8,9 @@ db_fireObj.settings({
 /*
 * @returns {none}
 */
-function db_get () {  
+function db_get () {
+    fn_processInput();
+      
     if ( validate_inputs() ) {
 // TO DO: TRIM THE FIRST AND LAST TRAILING WHITE SPACES
         showLoading();

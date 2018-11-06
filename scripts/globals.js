@@ -3,6 +3,8 @@ var gb_contentElem = document.getElementById('divContent');
 
 var MAX_LENGTH = 50;
 var PAGE_TITLE = "workmode.me";
+var magicWord = "";
+var db_data = "";
 
 var gb_pageHeader = "<div class='margin-top-5-p'>\
                       <header class='pointer-cursor' onclick='fn_reload()'>" + PAGE_TITLE + "</header>\
