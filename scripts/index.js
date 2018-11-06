@@ -22,7 +22,7 @@ function fn_showFetchedData () {
     var LINKS_OBJECT = db_data.linksList;
 
     if ( LINKS_OBJECT && LINKS_OBJECT instanceof Object && Object.keys(LINKS_OBJECT).length > 0 ) {
-        var TMPL = "<a class='external_link' target='_blank' href='";
+        var TMPL = "<a class='external_link padding-10 display-block hover-darken' title='Open link in new window' target='_blank' href='";
         var fetchedData = '';
 
         for ( var eachProperty in LINKS_OBJECT ) {
@@ -37,16 +37,8 @@ function fn_showFetchedData () {
 
 function bindElements (fetchedData) {
     gb_contentElem.innerHTML = gb_resultContent;
-    document.getElementById('divResults').innerHTML = fetchedData;
+    document.getElementById('divResults').innerHTML = "<div class='border-curved'>" + fetchedData + "</div>";
 } // FN BIND-ELEMENTS
-
-function hideLoading () {
-    document.getElementById('cover-spin').className = 'none';
-} // FN HIDE-LOADING
-
-function showLoading () {
-    document.getElementById('cover-spin').className = 'display';
-} // FN SHOW-LOADING
 
 
 

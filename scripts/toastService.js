@@ -15,3 +15,11 @@ function showToast (inpText, inpTime) {
 function hideToast () {
     toastElem.className = toastElem.className.replace("show", "");
 } // FN HIDE-TOAST
+
+function hideLoading () {
+    document.getElementById('divLoading').className = 'none';
+} // FN-HIDE-LOADING
+
+function showLoading () {
+    document.getElementById('divLoading').className = 'display';
+} // FN-SHOW-LOADING

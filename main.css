@@ -38,13 +38,36 @@ header{
 .padding-top-5-p{
     padding-top: 5%;
 }
+.margin-top-5-p{
+    margin-top: 5%;
+}
 .padding-15{
     padding: 15px;
+}
+.padding-10{
+    padding: 10px;
 }
 .margin-5{
     margin: 5px;
 }
+.display-block{
+    display: block;
+}
+.hover-darken:hover{
+    color: #000;
+    background-color: #ffbd33;
+}
 
+#divResults{
+    margin: 0 auto;
+    min-width: 250px;
+    max-width: 400px;
+}
+.border-curved{
+    border: 1px dashed #DAF7A6;
+    border-radius: 5px;
+    box-shadow: #009933;
+}
 
 #divToast {
     visibility: hidden;
@@ -135,14 +158,14 @@ header{
 }
 
 
-#cover-spin.display{
+#divLoading.display{
     display: block;
 }
-#cover-spin.none{
+#divLoading.none{
     display: none;
 }
 
-#cover-spin {
+#divLoading {
     position:fixed;
     width:100%;
     left:0;right:0;top:0;bottom:0;
@@ -161,7 +184,7 @@ header{
 	to {transform:rotate(360deg);}
 }
 
-#cover-spin::after {
+#divLoading::after {
     content:'';
     display:block;
     position:absolute;
